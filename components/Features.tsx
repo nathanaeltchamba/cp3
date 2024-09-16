@@ -8,7 +8,7 @@ const Features = () => {
       <div className="max-container padding-container relative w-full">
         <div className="z-20 flex w-full flex-col lg:w-[80%] mx-auto">
           <div className='relative'>
-            <h2 className="bold-40 lg:bold-64 text-gray-90 text-center">Our Plumbing Services</h2>
+            <h2 className="bold-40 lg:bold-64 text-gray-90 text-center">Our Solutions For Your Problems</h2>
           </div>
           <ul className="mt-10 grid gap-10 md:grid-cols-2 lg:gap-20">
             {PLUMBING_FEATURES.map((feature) => (

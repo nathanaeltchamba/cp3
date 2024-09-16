@@ -1,11 +1,9 @@
-// Navbar.tsx
-
 "use client";
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { NAV_LINKS } from '../constants'; // Adjust the path as needed
+import { NAV_LINKS } from '../constants';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,8 +40,7 @@ const Navbar = () => {
                             <li key={link.key}>
                                 <Link
                                     href={link.href}
-                                    className="regular-24 text-gray-300 flexCenter cursor-pointer pb-1.5 transition-all hover:text-green-500 hover:font-bold"
-                                >
+                                    className="regular-20 text-gray-300 flexCenter cursor-pointer pb-1.5 transition-all hover:text-green-500 hover:font-bold">
                                     {link.label}
                                 </Link>
                             </li>
@@ -62,14 +59,10 @@ const Navbar = () => {
 
             {/* Sidebar Menu */}
             <div
-                className={`fixed top-0 right-0 w-3/4 lg:hidden h-full bg-black bg-opacity-60 backdrop-blur-md text-gray-100 z-40 transform transition-transform duration-300 ease-in-out ${
-                    isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-                }`}
-            >
+                className={`fixed top-0 right-0 w-3/4 lg:hidden h-full bg-black bg-opacity-60 backdrop-blur-md text-gray-100 z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <button
                     onClick={toggleMenu}
-                    className="absolute top-4 right-4 text-white text-2xl"
-                >
+                    className="absolute top-4 right-4 text-white text-2xl">
                     &times;
                 </button>
                 <div className="flex flex-col items-center py-6">
@@ -81,8 +74,7 @@ const Navbar = () => {
                             <Link
                                 href={link.href}
                                 className="text-lg text-gray-100 cursor-pointer transition-all hover:text-white hover:font-bold"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
+                                onClick={() => setIsMenuOpen(false)}>
                                 {link.label}
                             </Link>
                         </li>

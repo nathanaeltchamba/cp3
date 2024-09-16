@@ -1,17 +1,19 @@
 import Divider from "@/components/Divider";
 import Features from "@/components/Features";
-import Guide from "@/components/Guide";
+import Greeting from "@/components/Greeting";
 import Hero from "@/components/Hero";
-import Test from "@/components/Test";
+import Banner from "@/components/Banner";
+import Action from "@/components/Action";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Guide />
-      <Test />
-      <Divider />
+      <Greeting />
+      <Banner />
+      {/* <Divider /> */}
       <Features />
+      <Action />
     </>
   );
 }

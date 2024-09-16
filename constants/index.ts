@@ -1,17 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
     { href: '/', key: 'home', label: 'Home' },
-    { href: '/', key: 'about', label: 'About CP3 Plumbing' },
-    { href: '/', key: 'services', label: 'Services' },
-    { href: '/', key: 'contact_us', label: 'Contact Us' },
-  ];
-  
-  // CAMP SECTION
-  export const PEOPLE_URL = [
-    '/person-1.png',
-    '/person-2.png',
-    '/person-3.png',
-    '/person-4.png',
+    { href: '/about', key: 'about', label: 'About CP3 Plumbing' },
+    { href: '/services', key: 'services', label: 'Services' },
+    { href: '/contact', key: 'contact_us', label: 'Contact Us' },
   ];
   
   // PLUMBING FEATURES SECTION
@@ -66,7 +58,7 @@ export const PLUMBING_FEATURES = [
   export const FOOTER_CONTACT_INFO = {
     title: 'Contact Us',
     links: [
-      { label: 'Admin', value: '123-456-7890' },
+      { label: 'Owner', value: '123-456-7890' },
       { label: 'Email', value: 'contact@cp3plumbing.com' },
     ],
   };
