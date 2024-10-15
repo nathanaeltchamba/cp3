@@ -48,7 +48,7 @@ const Guide = () => {
 
             <div className='flex w-full flex-col'>
               <p className="regular-16 text-gray-20">Since</p>
-              <h4 className="bold-20 mt-2 whitespace-nowrap">2015-Present</h4>
+              <h4 className="bold-20 mt-2 whitespace-nowrap">2018-Present</h4>
             </div>
           </div>
         </div>

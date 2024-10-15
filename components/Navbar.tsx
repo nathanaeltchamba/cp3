@@ -59,14 +59,16 @@ const Navbar = () => {
 
             {/* Sidebar Menu */}
             <div
-                className={`fixed top-0 right-0 w-3/4 lg:hidden h-full bg-black bg-opacity-60 backdrop-blur-md text-gray-100 z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                className={`fixed top-0 right-0 w-full lg:hidden h-full bg-black bg-opacity-60 backdrop-blur-md text-gray-100 z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <button
                     onClick={toggleMenu}
                     className="absolute top-4 right-4 text-white text-2xl">
                     &times;
                 </button>
                 <div className="flex flex-col items-center py-6">
-                    <Image src="/logo-nav.png" alt="logo" width={174} height={29} />
+                    <Link href="/">
+                        <Image src="/logo-nav.png" alt="logo" width={174} height={29} />
+                    </Link>
                 </div>
                 <ul className="flex flex-col items-center justify-center h-full pb-72">
                     {NAV_LINKS.map((link) => (

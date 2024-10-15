@@ -40,7 +40,7 @@ const Hero = () => {
         <div className="flex flex-col items-center gap-2 mb-4">
           <p className="text-base sm:text-lg font-semibold mb-2">
             Covering the Denver Metro Area
-            <span className="text-yellow-400"> For 20 Years</span>
+            <span className="text-yellow-400"> For Over {new Date().getFullYear() - 2018} Years</span>
           </p>
           <div className="flex items-center gap-2">
             {Array(5).fill(1).map((_, index) => (
