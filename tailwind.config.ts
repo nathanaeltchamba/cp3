@@ -36,6 +36,7 @@ module.exports = {
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/office_space.jpg')",
         'pattern-3': "url('/blue_home.jpg')",
+        '404-bg': "url('/404image.jpg')",
       },
       screens: {
         xs: '400px',

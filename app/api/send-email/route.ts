@@ -17,9 +17,9 @@ export async function POST(req: Request) {
 
         // Email options
         const mailOptions = {
-            from: 'admin@cp3plumbing.com',   // Send from admin
-            to: 'admin@cp3plumbing.com',     // Send to admin
-            replyTo: email,                  // Reply to the user who submitted the form
+            from: 'admin@cp3plumbing.com', 
+            to: 'admin@cp3plumbing.com',     
+            replyTo: email,                  
             subject: `Email From Website Contact Form from '${name}'`,
             text: message,
         };
