@@ -63,7 +63,7 @@ export const FOOTER_LINKS = [
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
-    { icon: '/phone-icon.svg', value: '303-330-2514' },
+    { icon: '/phone-icon.svg', value: '720-880-0431' },
     { icon: '/mail.svg', value: 'admin@cp3plumbing.com' },
     { icon: '/location-footer.svg', value: 'PO Box 390082 Denver CO 80239' },
   ],
