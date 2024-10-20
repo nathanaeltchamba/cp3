@@ -174,3 +174,98 @@ body {
 .navbar-about a {
   color: #f9f9f9; 
 }
+
+/* Embla Carousel */
+
+.embla {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  will-change: transform;
+}
+
+.embla__slide {
+  position: relative;
+  min-width: 80%; /* Reduce the width */
+  padding: 10px; /* Padding for space around the image */
+  margin: 0 auto;
+  box-sizing: border-box; /* Ensures padding is included in the total width */
+}
+
+.slide-container {
+  border: 4px solid #797878;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Arrows */
+.embla__prev,
+.embla__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.embla__prev {
+  left: 10px;
+}
+
+.embla__next {
+  right: 10px;
+}
+
+/* Optional hover effect */
+.embla__prev:hover,
+.embla__next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.embla__dot {
+  background-color: #ccc;
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.embla__dot.is-selected {
+  background-color: #000;
+}
+
+.embla__dot:hover {
+  background-color: #888;
+}
+
+

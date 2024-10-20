@@ -2,8 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Features from '@/components/Features';
+import Carousel from '@/components/Carousel';
 
 const Services = () => {
+    // Define the images for the carousel
+    const slides = [
+        '/construction.jpg',
+        '/meeting.jpg',
+        '/office_space.jpg',
+        '/office.jpg',
+        '/construction1.jpg',
+        '/construction2.jpg',
+        '/construction3.jpg',
+        '/construction4.jpg',
+    ];
+
     return (
         <div>
             {/* Banner Section */}
@@ -26,7 +39,6 @@ const Services = () => {
                 </div>
             </section>
 
-
             {/* Services Section */}
             <Features />
 
@@ -47,6 +59,15 @@ const Services = () => {
                 </div>
             </section>
 
+            {/* Carousel Section */}
+            <section className="py-20">
+                <div className="max-w-screen-xl mx-auto px-6 lg:px-0">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">
+                        Our Work Gallery
+                    </h2>
+                    <Carousel slides={slides} />
+                </div>
+            </section>
 
         </div>
     );
