@@ -9,29 +9,29 @@ export const NAV_LINKS = [
 // PLUMBING FEATURES SECTION
 export const PLUMBING_FEATURES = [
   {
-    title: 'Leak Detection & Repair',
-    icon: '/map.svg',  
+    title: 'New Build Projects Residential/Commercial',
+    icon: '/map.svg',
     variant: 'green',
     description:
-      'Our team specializes in locating and repairing leaks quickly and efficiently to prevent further damage to your property.',
+      'Our plumbing team handles all plumbing aspects for new construction projects, ensuring proper installations for both residential and commercial buildings.',
   },
   {
-    title: 'Water Heater Installation',
-    icon: '/calendar.svg',  
+    title: 'Water Heater Tank Install/ Tankless WH Install',
+    icon: '/calendar.svg',
     variant: 'green',
     description:
-      'We offer professional water heater installation services, ensuring your system is running efficiently and safely.',
+      'We specialize in the installation of both traditional water heater tanks and tankless systems to meet your specific needs and preferences.',
   },
   {
-    title: 'Drain Cleaning & Unclogging',
-    icon: '/tech.svg',  
+    title: 'Backflow Installation & Testing',
+    icon: '/tech.svg',
     variant: 'green',
     description:
-      'From clogged sinks to backed-up drains, our expert plumbers will clear the blockage and get your plumbing flowing smoothly again.',
+      'We provide expert backflow prevention device installation and testing to protect your water supply from contamination.',
   },
   {
     title: 'Bathroom & Kitchen Renovations',
-    icon: '/location.svg',  
+    icon: '/location.svg',
     variant: 'orange',
     description:
       'Whether it’s a small update or a full renovation, we provide top-notch plumbing services for your kitchen or bathroom remodel.',

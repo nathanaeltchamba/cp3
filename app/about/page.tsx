@@ -27,13 +27,13 @@ const About = () => {
                     <div className="lg:flex-1">
                         <h2 className="bold-40 text-green-50">Our Mission</h2>
                         <p className="regular-20 text-gray-600 mt-4">
-                            Our mission is to provide exceptional plumbing services that offer lasting solutions to our clients' problems. We aim to build trust and offer value with every project, big or small.
+                            Our mission is to provide exceptional plumbing services that helps the hygienic care of the environment and offer lasting solutions to our clients'. We aim to build trust and lasting relationships with our customers and employees.
                         </p>
                     </div>
                     {/* Image on the right */}
                     <div className="lg:flex-1">
                         <Image
-                            src="/kitchen3.jpg"  
+                            src="/kitchen3.jpg"
                             alt="Our mission"
                             width={720}
                             height={480}
@@ -50,13 +50,14 @@ const About = () => {
                     <div className="lg:flex-1">
                         <h2 className="bold-40 text-green-50">Why Choose Us</h2>
                         <p className="regular-20 text-gray-600 mt-4">
-                            CP3 Plumbing stands out for its dedication to customer satisfaction and its commitment to providing timely, reliable, and high-quality plumbing solutions. From small repairs to large installations, we do it all.
+                            CP3 Plumbing stands out for its dedication to customer satisfaction and its commitment
+                            to providing timely, reliable, and high-quality plumbing solutions.
                         </p>
                     </div>
                     {/* Image on the left */}
                     <div className="lg:flex-1">
                         <Image
-                            src="/kitchen2.jpg"  
+                            src="/kitchen2.jpg"
                             alt="Why Choose Us"
                             width={720}
                             height={480}
@@ -72,14 +73,14 @@ const About = () => {
                     {/* Text on the left */}
                     <div className="lg:flex-1">
                         <h2 className="bold-40 text-green-50">Our Values</h2>
-                        <p className="regular- text-gray-600 mt-4">
+                        <p className="regular-20 text-gray-600 mt-4">
                             Integrity, quality, and trust form the foundation of our work. We believe in transparent communication, fair pricing, and delivering results that last.
                         </p>
                     </div>
                     {/* Image on the right */}
                     <div className="lg:flex-1">
                         <Image
-                            src="/open-kitchen.jpg" 
+                            src="/open-kitchen.jpg"
                             alt="Our Values"
                             width={720}
                             height={480}

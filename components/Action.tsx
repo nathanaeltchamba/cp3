@@ -13,7 +13,8 @@ const Action = () => {
                             </p>
                             <div className="flex flex-col gap-4 lg:gap-6">
                                 <p className="regular-20 xl:max-w-[520px] mx-auto text-gray-100">
-                                    Our dedicated team of professionals is here to resolve all your plumbing issues with precision and care.
+                                    We are here to help resolve all your plumbing issues with precision and care and give
+                                    you peace of mind.
                                 </p>
                                 <div className="mt-6">
                                     <Link

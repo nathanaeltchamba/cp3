@@ -24,7 +24,7 @@ const Hero = () => {
         </h1>
 
         <p className="regular-14 sm:text-lg md:text-xl mb-8 max-w-3xl mx-auto py-8">
-          We provide top-quality plumbing services for residential and commercial properties.
+          We provide top-quality plumbing services for New and remodeling residential and commerical construction projects.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -39,7 +39,7 @@ const Hero = () => {
         {/* Creating a Container for stars and text */}
         <div className="flex flex-col items-center gap-2 mb-4">
           <p className="text-base sm:text-lg font-semibold mb-2">
-            Covering the Denver Metro Area
+            Covering the Denver Metro Area and Front Range
             <span className="text-yellow-400"> For Over {new Date().getFullYear() - 2018} Years</span>
           </p>
           <div className="flex items-center gap-2">
