@@ -24,7 +24,7 @@ const Hero = () => {
         </h1>
 
         <p className="regular-14 sm:text-lg md:text-xl mb-8 max-w-3xl mx-auto py-8">
-          We provide top-quality plumbing services for New and remodeling residential and commerical construction projects.
+          We provide top-quality plumbing services for both new and remodeling residential and commercial construction projects.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
