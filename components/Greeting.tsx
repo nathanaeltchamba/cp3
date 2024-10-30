@@ -22,9 +22,7 @@ const Guide = () => {
               <div className="flex flex-col gap-5 lg:gap-10">
                 <h2 className="bold-32 lg:bold-40">Masters of Plumbing, Experts in Remodeling and New Builds</h2>
                 <p className="regular-18 text-gray- xl:max-w-[520px] mx-auto">
-                  CP3 Plumbing takes pride in our work and we ensure to deliver the best quality work
-                  possible with our expertise, experiences and the best team possible; to give our clients
-                  peace of mind.
+                  CP3 Plumbing takes pride in our work and we ensure to deliver the best quality possible with our expertise, experience, and the best team to give our clients peace of mind.
                 </p>
               </div>
             </div>
