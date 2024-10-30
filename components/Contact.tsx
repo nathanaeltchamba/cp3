@@ -36,7 +36,8 @@ const ContactComponent = () => {
             setSuccess(responseData.message || 'Message sent successfully!');
             setFormData({ name: '', email: '', message: '' });
         } catch (err) {
-            setError(err.message || 'Failed to send message');
+            const errorMessage = err instanceof Error ? err.message : 'Failed to send message';
+            setError(errorMessage);
         }
 
         setLoading(false);

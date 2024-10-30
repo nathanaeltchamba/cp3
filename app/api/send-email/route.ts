@@ -20,7 +20,7 @@ export async function POST(req: Request) {
             from: 'admin@cp3plumbing.com', 
             to: 'admin@cp3plumbing.com',     
             replyTo: email,                  
-            subject: `Email From Website Contact Form from '${name}'`,
+            subject: `Thank You For Reaching Out To CP3 Plumbing`,
             text: message,
         };
 
