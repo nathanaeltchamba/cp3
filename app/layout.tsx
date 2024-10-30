@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "CP3 Plumbing",
-  description: "CP3 Plumbing offers top-notch plumbing and gas services for new residential, remodel and small commercial projects.",
+  description: "With over 6 years of trusted service, CP3 Plumbing delivers expert plumbing solutions for both residential and commercial clients. Our skilled team is dedicated to meeting every plumbing need with precision, professionalism, and a commitment to exceptional quality.",
 };
 
 export default function RootLayout({

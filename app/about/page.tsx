@@ -15,7 +15,7 @@ const About = () => {
 
                 <div className="relative z-10 lg:flex-1">
                     <p className="regular-20 text-gray-600 mt-6 max-w-2xl mx-auto lg:mx-0">
-                        CP3 Plumbing has been providing reliable plumbing services for over 20 years. Our expertise covers residential and commercial projects, ensuring that every client's plumbing needs are met with precision and professionalism.
+                        CP3 Plumbing has been providing reliable plumbing services for over {new Date().getFullYear() - 2018} years. Our expertise covers residential and commercial projects, ensuring that every client's plumbing needs are met with precision and professionalism.
                     </p>
                 </div>
             </div>

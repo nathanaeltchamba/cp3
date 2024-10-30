@@ -60,14 +60,14 @@ const Services = () => {
             </section>
 
             {/* Carousel Section */}
-            <section className="py-20">
+            {/* <section className="py-20">
                 <div className="max-w-screen-xl mx-auto px-6 lg:px-0">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">
                         Our Work Gallery
                     </h2>
                     <Carousel slides={slides} />
                 </div>
-            </section>
+            </section> */}
 
         </div>
     );

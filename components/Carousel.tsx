@@ -1,9 +1,13 @@
-'use client';
+"use client";
 
 import React, { useEffect, useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
-const Carousel = ({ slides }) => {
+interface CarouselProps {
+    slides: string[];
+}
+
+const Carousel: React.FC<CarouselProps> = ({ slides }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
