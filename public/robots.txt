@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.cp3plumbing.com
+
+# Sitemaps
+Sitemap: https://www.cp3plumbing.com/sitemap.xml
