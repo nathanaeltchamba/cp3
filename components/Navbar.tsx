@@ -16,7 +16,14 @@ const Navbar = () => {
 
     const handleScroll = () => {
         const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        setScrollingUp(currentScrollTop < lastScrollTop);
+
+        // Ensure the navbar remains visible at the top of the page
+        if (currentScrollTop <= 0) {
+            setScrollingUp(true);
+        } else {
+            setScrollingUp(currentScrollTop < lastScrollTop);
+        }
+
         setLastScrollTop(currentScrollTop);
     };
 
@@ -30,7 +37,7 @@ const Navbar = () => {
     return (
         <>
             {/* Main Navbar */}
-            <nav className={`fixed top-0 left-0 w-full z-30 py-5 transition-transform duration-300 ease-in-out ${scrollingUp ? 'translate-y-0' : '-translate-y-full'} `}>
+            <nav className={`fixed top-0 left-0 w-full z-30 py-5 transition-transform duration-300 ease-in-out ${scrollingUp ? 'translate-y-0' : '-translate-y-full'}`}>
                 <div className="relative flexBetween padding-container mx-28">
                     <Link href="/">
                         <Image src="/cp3.png" alt="logo" width={124} height={29} />
