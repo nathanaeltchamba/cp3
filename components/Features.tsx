@@ -4,7 +4,7 @@ import React from 'react'
 
 const Features = () => {
   return (
-    <section className="flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-20 pb-52">
+    <section className="flex-col flexCenter overflow-hidden bg-center bg-no-repeat py-20 pb-52">
       <div className="max-container padding-container relative w-full">
         <div className="z-20 flex w-full flex-col lg:w-[80%] mx-auto">
           <div className='relative'>
