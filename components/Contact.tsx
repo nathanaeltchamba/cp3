@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from 'react';
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const ContactComponent = () => {
+    const { executeRecaptcha } = useGoogleReCaptcha();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
@@ -18,18 +20,26 @@ const ContactComponent = () => {
         setError('');
         setSuccess('');
 
+        if (!executeRecaptcha) {
+            setError("reCAPTCHA not ready");
+            return;
+        }
+
+        // Get token from reCAPTCHA
+        const token = await executeRecaptcha("contact_form");
+
         try {
             const res = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ ...formData, reCaptchaToken: token }),
             });
 
             if (!res.ok) {
                 const errorData = await res.json();
-                throw new Error(errorData.error || 'Something went wrong');
+                throw new Error(errorData.message || 'Something went wrong');
             }
 
             const responseData = await res.json();
@@ -48,43 +58,17 @@ const ContactComponent = () => {
             <div className="w-full max-w-lg p-8">
                 <h2 className="bold-40 lg:bold-64 mb-6 text-center text-gray-100">Contact Us</h2>
 
-                {/* Display success or error messages */}
                 {success && <p className="text-green-400 text-2xl text-center mb-4">{success}</p>}
                 {error && <p className="text-red-600 text-2xl text-center mb-4">{error}</p>}
 
-                {/* Contact Form */}
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="p-4 regular-16 text-gray-900 bg-white border border-gray-300 rounded-lg"
-                        required
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="p-4 regular-16 text-gray-900 bg-white border border-gray-300 rounded-lg"
-                        required
-                    />
-                    <textarea
-                        name="message"
-                        placeholder="Your Message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="p-4 regular-16 text-gray-900 bg-white border border-gray-300 rounded-lg h-40"
-                        required
-                    />
-                    <button
-                        type="submit"
-                        className="btn_green w-full py-4 rounded-lg flex justify-center items-center"
-                        disabled={loading}
-                    >
+                    <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required className="p-4 regular-16 text-gray-900 bg-white border border-gray-300 rounded-lg" />
+
+                    <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required className="p-4 regular-16 text-gray-900 bg-white border border-gray-300 rounded-lg" />
+
+                    <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required className="p-4 regular-16 text-gray-900 bg-white border border-gray-300 rounded-lg h-40" />
+
+                    <button type="submit" className="btn_green w-full py-4 rounded-lg" disabled={loading}>
                         {loading ? 'Sending...' : 'Send Message'}
                     </button>
                 </form>
