@@ -1,10 +1,56 @@
 import nodemailer from "nodemailer";
 
+// Rate limiter: max 3 requests per IP per 60 seconds
+const ipRequestMap = new Map<string, { count: number; timestamp: number }>();
+const RATE_LIMIT = 3;
+const WINDOW_MS = 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = ipRequestMap.get(ip);
+
+  if (!entry || now - entry.timestamp > WINDOW_MS) {
+    ipRequestMap.set(ip, { count: 1, timestamp: now });
+    return false;
+  }
+
+  if (entry.count >= RATE_LIMIT) return true;
+
+  entry.count++;
+  return false;
+}
+
 export async function POST(req: Request) {
   try {
-    const { name, email, message, reCaptchaToken } = await req.json();
+    // Block IPs that exceed rate limit
+    const ip = req.headers.get("x-forwarded-for") ?? "unknown";
+    if (isRateLimited(ip)) {
+      return new Response(
+        JSON.stringify({ message: "Too many requests. Please wait a moment and try again." }),
+        { status: 429 }
+      );
+    }
 
-    // Verify reCAPTCHA
+    const { name, email, message, reCaptchaToken, honeypot } = await req.json();
+
+    // Silently discard bot submissions
+    if (honeypot) {
+      return new Response(
+        JSON.stringify({ message: "Message sent successfully!" }),
+        { status: 200 }
+      );
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return new Response(
+        JSON.stringify({ message: "Invalid email address." }),
+        { status: 400 }
+      );
+    }
+
+    // Verify reCAPTCHA token and score
     const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
     const verifyRes = await fetch(
@@ -18,10 +64,10 @@ export async function POST(req: Request) {
 
     const verifyData = await verifyRes.json();
 
-    if (!verifyData.success) {
+    if (!verifyData.success || verifyData.score < 0.5) {
       console.error("reCAPTCHA failed:", verifyData);
       return new Response(
-        JSON.stringify({ message: "reCAPTCHA failed" }),
+        JSON.stringify({ message: "reCAPTCHA verification failed. Please try again." }),
         { status: 400 }
       );
     }
@@ -45,19 +91,7 @@ export async function POST(req: Request) {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
-    const autoReplyOptions = {
-      from: `"no-reply@cp3plumbing" <no-reply@cp3plumbing.com>`,
-      to: email,
-      subject: "We've Received Your Inquiry - CP3 Plumbing",
-      text: `Hello ${name},\n\nThank you for reaching out to CP3 Plumbing. We will contact you shortly.`,
-    };
-
-
-    // Send admin email
     await transporter.sendMail(companyMailOptions);
-
-    // Send auto-reply
-    await transporter.sendMail(autoReplyOptions);
 
     return new Response(
       JSON.stringify({ message: "Message sent successfully!" }),
